@@ -31,9 +31,9 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useAuth } from "../lib/auth-context";
 import { AuthModal } from "./auth/AuthModal";
 // Updated to use existing logo.png file (QIS Logo) with cache busting
-// Force browser to reload new logo by adding timestamp
+// Use static version string to avoid hydration mismatch
 const logoVersion = '20250122_v3_new'; // Update this when logo changes
-const qualifyLogoUrl = `/logo.png?v=${logoVersion}&t=${Date.now()}`;
+const qualifyLogoUrl = `/logo.png?v=${logoVersion}`;
 
 const services = [
   { icon: Wrench, label: "Pharma Engineering", page: "pharma-engineering" },

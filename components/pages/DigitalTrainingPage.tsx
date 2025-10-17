@@ -370,8 +370,8 @@ export function DigitalTrainingPage() {
       level: "All Levels",
       description: "Comprehensive video training on Good Manufacturing Practice (GMP) Digital Standard Operating Procedures. This module covers essential GMP principles, digital documentation requirements, and compliance standards for pharmaceutical manufacturing. Learn about proper procedures, documentation practices, and regulatory requirements through detailed video instruction.",
       topics: ["GMP Principles", "Digital Documentation", "SOP Compliance", "Quality Standards"],
-      videoSrc: "/videos/GMP Digital SOP Final.mp4",
-      previewImage: "/videos/GMP Digital SOP Final.mp4"
+      videoSrc: "/videos/GMP-Digital-SOP-Final.mp4",
+      previewImage: "/videos/GMP-Digital-SOP-Final.mp4"
     },
     {
       id: "gdp-sop-training",
@@ -382,8 +382,8 @@ export function DigitalTrainingPage() {
       level: "Intermediate",
       description: "Detailed training on Good Distribution Practice (GDP) Standard Operating Procedures. This video module provides comprehensive coverage of distribution practices, supply chain management, and regulatory compliance requirements. Essential for professionals involved in pharmaceutical distribution and logistics.",
       topics: ["GDP Guidelines", "Distribution Practices", "Supply Chain", "Regulatory Compliance"],
-      videoSrc: "/videos/GDP SOP.mp4",
-      previewImage: "/videos/GDP SOP.mp4"
+      videoSrc: "/videos/GDP-SOP.mp4",
+      previewImage: "/videos/GDP-SOP.mp4"
     },
     {
       id: "safety-training",

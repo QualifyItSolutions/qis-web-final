@@ -52,6 +52,8 @@ export interface EnrollmentSubmission {
 // Contact form submission function
 export async function submitContactForm(formData: Omit<ContactFormSubmission, 'id' | 'created_at' | 'updated_at'>) {
   try {
+    console.log('📧 Submitting contact form:', formData.email);
+
     const { data, error } = await supabase
       .from('contact_submissions')
       .insert([
@@ -66,13 +68,14 @@ export async function submitContactForm(formData: Omit<ContactFormSubmission, 'i
       .select()
 
     if (error) {
-      console.error('Contact form submission error:', error);
-      throw new Error('Failed to submit contact form. Please try again.');
+      console.error('❌ Contact form submission error:', error);
+      throw new Error(`Failed to submit contact form: ${error.message}`);
     }
 
+    console.log('✅ Contact form submitted successfully');
     return { success: true, data }
   } catch (error) {
-    console.error('Contact form submission error:', error);
+    console.error('❌ Contact form submission error:', error);
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error occurred'
@@ -227,19 +230,22 @@ Submitted at: ${new Date().toLocaleString()}
 // Authentication functions
 export async function signUp(email: string, password: string) {
   try {
+    console.log('🔐 Attempting sign up for:', email);
+
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
     })
 
     if (error) {
-      console.error('Sign up error:', error);
+      console.error('❌ Sign up error:', error);
       throw new Error(error.message);
     }
 
+    console.log('✅ Sign up successful');
     return { success: true, data }
   } catch (error) {
-    console.error('Sign up error:', error);
+    console.error('❌ Sign up error:', error);
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Sign up failed'
@@ -249,19 +255,22 @@ export async function signUp(email: string, password: string) {
 
 export async function signIn(email: string, password: string) {
   try {
+    console.log('🔐 Attempting sign in for:', email);
+
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     })
 
     if (error) {
-      console.error('Sign in error:', error);
+      console.error('❌ Sign in error:', error);
       throw new Error(error.message);
     }
 
+    console.log('✅ Sign in successful');
     return { success: true, data }
   } catch (error) {
-    console.error('Sign in error:', error);
+    console.error('❌ Sign in error:', error);
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Sign in failed'
@@ -271,16 +280,19 @@ export async function signIn(email: string, password: string) {
 
 export async function signOut() {
   try {
+    console.log('🔐 Attempting sign out');
+
     const { error } = await supabase.auth.signOut()
 
     if (error) {
-      console.error('Sign out error:', error);
+      console.error('❌ Sign out error:', error);
       throw new Error(error.message);
     }
 
+    console.log('✅ Sign out successful');
     return { success: true }
   } catch (error) {
-    console.error('Sign out error:', error);
+    console.error('❌ Sign out error:', error);
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Sign out failed'
@@ -290,16 +302,19 @@ export async function signOut() {
 
 export async function getCurrentUser() {
   try {
+    console.log('🔐 Fetching current user');
+
     const { data: { user }, error } = await supabase.auth.getUser()
 
     if (error) {
-      console.error('Get user error:', error);
+      console.error('❌ Get user error:', error);
       throw new Error(error.message);
     }
 
+    console.log('✅ Current user fetched');
     return { success: true, user }
   } catch (error) {
-    console.error('Get user error:', error);
+    console.error('❌ Get user error:', error);
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Failed to get user'
