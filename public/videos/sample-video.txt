@@ -1,0 +1,11 @@
+This is a placeholder for video files.
+
+To add actual videos:
+1. Replace this file with actual .mp4 video files
+2. Name them according to the modules:
+   - csv-essentials-intro.mp4
+   - global-compliance-intro.mp4
+
+For testing purposes, you can use any sample video files.
+
+

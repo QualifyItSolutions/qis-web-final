@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-size: 14px;
+  
+  /* Dark Theme Color Palette for Landing Page */
+  --dark-bg: #000000;
+  --dark-card: #1C1C1E;
+  --dark-primary-text: #FFFFFF;
+  --dark-secondary-text: #8E8E93;
+  --dark-positive: #34C759;
+  --dark-negative: #FF3B30;
+  --dark-cta: #3B82F6;
+  --dark-tag: #2C2C2E;
+  --dark-hover: #2C2C2E;
+  --dark-table-hover: #1C1C1E;
+  --dark-border: #2C2C2E;
+  
+  /* Light Classic Theme Color Palette for Service Pages */
+  --light-bg: #FAFAFA;
+  --light-card: #FFFFFF;
+  --light-primary-text: #000000;
+  --light-secondary-text: #8E8E93;
+  --light-positive: #34C759;
+  --light-negative: #FF3B30;
+  --light-cta: #2563EB;
+  --light-tag: #F3F4F6;
+  --light-hover: #F9FAFB;
+  --light-table-hover: #F3F4F6;
+  --light-border: #E5E7EB;
+  
+  /* Pharma Brand Colors */
+  --pharma-primary: #1E40AF;
+  --pharma-secondary: #059669;
+  --pharma-accent: #DC2626;
+  --pharma-neutral: #64748B;
+  
+  /* Updated theme variables for light mode */
+  --background: #FAFAFA;
+  --foreground: #1F2937;
+  --card: #FFFFFF;
+  --card-foreground: #1F2937;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2937;
+  --primary: #1E40AF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3F4F6;
+  --secondary-foreground: #1F2937;
+  --muted: #F9FAFB;
+  --muted-foreground: #6B7280;
+  --accent: #1E40AF;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #FFFFFF;
+  --input-background: #FFFFFF;
+  --switch-background: #E5E7EB;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --ring: #1E40AF;
+  
+  /* Chart colors using pharma theme palette */
+  --chart-1: #1E40AF;
+  --chart-2: #059669;
+  --chart-3: #64748B;
+  --chart-4: #D97706;
+  --chart-5: #DC2626;
+  
+  --radius: 12px;
+}
+
+/* Direct color definitions for better compatibility */
+:root {
+  --color-dark-bg: #000000;
+  --color-dark-card: #1C1C1E;
+  --color-dark-primary-text: #FFFFFF;
+  --color-dark-secondary-text: #8E8E93;
+  --color-dark-positive: #34C759;
+  --color-dark-negative: #FF3B30;
+  --color-dark-cta: #3B82F6;
+  --color-dark-tag: #2C2C2E;
+  --color-dark-hover: #2C2C2E;
+  --color-dark-table-hover: #1C1C1E;
+  --color-dark-border: #2C2C2E;
+  
+  --color-light-bg: #FAFAFA;
+  --color-light-card: #FFFFFF;
+  --color-light-primary-text: #000000;
+  --color-light-secondary-text: #8E8E93;
+  --color-light-positive: #34C759;
+  --color-light-negative: #FF3B30;
+  --color-light-cta: #2563EB;
+  --color-light-tag: #F3F4F6;
+  --color-light-hover: #F9FAFB;
+  --color-light-table-hover: #F3F4F6;
+  --color-light-border: #E5E7EB;
+  
+  --color-pharma-primary: #1E40AF;
+  --color-pharma-secondary: #059669;
+  --color-pharma-accent: #DC2626;
+  --color-pharma-neutral: #64748B;
+}
+
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
+
+  body {
+    @apply bg-white text-neutral-900;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+  }
+}
+
+/**
+ * Base typography with responsive styling
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    p {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--light-secondary-text);
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    button {
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    input {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Dark theme utility classes */
+@layer utilities {
+  /* Dark theme text colors */
+  .text-dark-primary { color: var(--color-dark-primary-text); }
+  .text-dark-secondary { color: var(--color-dark-secondary-text); }
+  .text-dark-positive { color: var(--color-dark-positive); }
+  .text-dark-negative { color: var(--color-dark-negative); }
+  .text-dark-cta { color: var(--color-dark-cta); }
+  
+  /* Light theme text colors */
+  .text-light-primary { color: var(--color-light-primary-text); }
+  .text-light-secondary { color: var(--color-light-secondary-text); }
+  .text-light-positive { color: var(--color-light-positive); }
+  .text-light-negative { color: var(--color-light-negative); }
+  .text-light-cta { color: var(--color-light-cta); }
+  
+  /* Pharma brand text colors */
+  .text-pharma-primary { color: var(--color-pharma-primary); }
+  .text-pharma-secondary { color: var(--color-pharma-secondary); }
+  .text-pharma-accent { color: var(--color-pharma-accent); }
+  .text-pharma-neutral { color: var(--color-pharma-neutral); }
+  
+  /* Background colors */
+  .bg-dark-bg { background-color: var(--color-dark-bg); }
+  .bg-dark-card { background-color: var(--color-dark-card); }
+  .bg-dark-tag { background-color: var(--color-dark-tag); }
+  .bg-dark-hover { background-color: var(--color-dark-hover); }
+  .bg-dark-table-hover { background-color: var(--color-dark-table-hover); }
+  
+  .bg-light-bg { background-color: var(--color-light-bg); }
+  .bg-light-card { background-color: var(--color-light-card); }
+  .bg-light-tag { background-color: var(--color-light-tag); }
+  .bg-light-hover { background-color: var(--color-light-hover); }
+  .bg-light-table-hover { background-color: var(--color-light-table-hover); }
+  
+  .bg-pharma-primary { background-color: var(--color-pharma-primary); }
+  .bg-pharma-secondary { background-color: var(--color-pharma-secondary); }
+  .bg-pharma-accent { background-color: var(--color-pharma-accent); }
+  .bg-pharma-neutral { background-color: var(--color-pharma-neutral); }
+  
+  /* Border colors */
+  .border-dark-color { border-color: var(--color-dark-border); }
+  .border-light-color { border-color: var(--color-light-border); }
+  .border-pharma-primary { border-color: var(--color-pharma-primary); }
+}
+
+/* Enhanced component styling for both themes */
+@layer components {
+  /* Dark theme components */
+  .dark-card {
+    border-radius: 12px;
+    border: 1px solid var(--color-dark-border);
+    padding: 24px; /* 3 * 8px base unit */
+    background-color: var(--color-dark-card);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 12px;
+  }
+
+  .dark-button-primary {
+    font-weight: 600;
+    padding: 12px 24px; /* 8px base unit multiples */
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    color: #FFFFFF;
+    background-color: var(--color-dark-cta);
+  }
+  
+  .dark-button-primary:hover {
+    background-color: #2563eb;
+    box-shadow: 0 0 0 1px var(--color-dark-cta), 0 0 8px rgba(59, 130, 246, 0.4);
+  }
+  
+  .dark-button-secondary {
+    font-weight: 600;
+    padding: 12px 24px; /* 8px base unit multiples */
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    color: var(--color-dark-cta);
+    border: 1px solid var(--color-dark-cta);
+  }
+  
+  .dark-button-secondary:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+
+  /* Light theme components */
+  .light-card {
+    border-radius: 12px;
+    border: 1px solid var(--color-light-border);
+    padding: 24px; /* 3 * 8px base unit */
+    background-color: var(--color-light-card);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+  }
+
+  .light-button-primary {
+    font-weight: 600;
+    padding: 12px 24px; /* 8px base unit multiples */
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    color: #FFFFFF;
+    background-color: var(--color-pharma-primary);
+  }
+  
+  .light-button-primary:hover {
+    background-color: #1E3A8A;
+    box-shadow: 0 0 0 1px var(--color-pharma-primary), 0 0 8px rgba(30, 64, 175, 0.2);
+  }
+  
+  .light-button-secondary {
+    font-weight: 600;
+    padding: 12px 24px; /* 8px base unit multiples */
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    color: var(--color-pharma-primary);
+    border: 1px solid var(--color-pharma-primary);
+  }
+  
+  .light-button-secondary:hover {
+    background-color: rgba(30, 64, 175, 0.05);
+  }
+
+  /* Pharma-specific components */
+  .pharma-gradient {
+    background: linear-gradient(135deg, var(--color-pharma-primary) 0%, var(--color-pharma-secondary) 100%);
+  }
+  
+  .pharma-card {
+    border-radius: 12px;
+    border: 1px solid var(--color-light-border);
+    padding: 32px; /* 4 * 8px base unit */
+    background-color: var(--color-light-card);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .pharma-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+    transform: translateY(-2px);
+  }
+
+  .light-shadow {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+  }
+  
+  .light-shadow-lg {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px;
+  }
+  
+  .dark-shadow {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 12px;
+  }
+  
+  .dark-shadow-lg {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
+  }
+
+  /* 8px Base Unit Spacing System */
+  .space-unit-1 { margin: 8px; }
+  .space-unit-2 { margin: 16px; }
+  .space-unit-3 { margin: 24px; }
+  .space-unit-4 { margin: 32px; }
+  .space-unit-5 { margin: 40px; }
+  .space-unit-6 { margin: 48px; }
+
+  .p-unit-1 { padding: 8px; }
+  .p-unit-2 { padding: 16px; }
+  .p-unit-3 { padding: 24px; }
+  .p-unit-4 { padding: 32px; }
+  .p-unit-5 { padding: 40px; }
+  .p-unit-6 { padding: 48px; }
+
+  /* Professional Pharmaceutical Transitions */
+  .transition-pharma {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-pharma-fast {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-pharma-slow {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
